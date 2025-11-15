@@ -141,8 +141,8 @@
 
         .option {
             background: #f8f9fa;
-            padding: 16px;
-            margin-bottom: 12px;
+            padding: 14px;
+            margin-bottom: 10px;
             border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -166,21 +166,21 @@
         }
 
         .option-label {
-            font-size: 16px;
+            font-size: 15px;
             cursor: pointer;
             display: block;
-            padding-left: 36px;
+            padding-left: 32px;
             position: relative;
+            line-height: 1.4;
         }
 
         .option-label::before {
             content: '';
             position: absolute;
             left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 24px;
-            height: 24px;
+            top: 2px;
+            width: 20px;
+            height: 20px;
             border: 2px solid #667eea;
             border-radius: 50%;
             background: white;
@@ -194,20 +194,20 @@
         .option.selected .option-label::after {
             content: '✓';
             position: absolute;
-            left: 6px;
-            top: 50%;
-            transform: translateY(-50%);
+            left: 5px;
+            top: 2px;
             color: #667eea;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
         }
 
         .bottom-nav {
             background: white;
-            padding: 16px 20px;
+            padding: 12px 20px;
             box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
             display: flex;
             gap: 12px;
+            flex-shrink: 0;
         }
 
         .btn {
@@ -215,8 +215,8 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            padding: 16px;
-            font-size: 16px;
+            padding: 14px;
+            font-size: 15px;
             border-radius: 12px;
             cursor: pointer;
             font-weight: 600;
@@ -318,9 +318,10 @@
             display: flex;
             justify-content: center;
             gap: 8px;
-            padding: 16px 20px;
+            padding: 12px 20px;
             background: white;
             box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.05);
+            flex-shrink: 0;
         }
 
         .dot {
