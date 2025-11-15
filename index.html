@@ -91,6 +91,8 @@
             flex: 1;
             overflow-y: auto;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
         }
 
         .form-group {
@@ -126,17 +128,17 @@
         .question-card {
             background: white;
             border-radius: 16px;
-            padding: 24px;
+            padding: 20px;
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-            margin-bottom: 20px;
+            margin-bottom: auto;
         }
 
         .question-text {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 600;
             color: #333;
-            line-height: 1.6;
-            margin-bottom: 24px;
+            line-height: 1.5;
+            margin-bottom: 20px;
         }
 
         .option {
@@ -772,13 +774,8 @@
                 timestamp: new Date().toISOString()
             };
 
-            // Save to localStorage
             saveToLocalStorage(result);
-
-            // Try to send to Google Sheets if available
             sendToGoogleSheets(result);
-
-            // Display results
             displayResults(score);
         }
 
@@ -787,20 +784,22 @@
                 const allResults = JSON.parse(localStorage.getItem('quizResults') || '[]');
                 allResults.push(result);
                 localStorage.setItem('quizResults', JSON.stringify(allResults));
-                console.log('Saved to localStorage:', result);
+                console.log('✅ Saved to localStorage:', result);
             } catch (e) {
-                console.error('Error saving to localStorage:', e);
+                console.error('❌ Error saving to localStorage:', e);
             }
         }
 
         function sendToGoogleSheets(result) {
-            // Google Sheets Web App URL - Replace with your actual URL
-            const GOOGLE_SHEETS_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+            // 🔴 IMPORTANT: REPLACE THIS URL WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
+            const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzSGMqOGnC1aKTUk9omY9GdbuKPTDJrLX9Kv_W3-rc8q4vcLN6_mDTl9sLtVRMbMTbdrQ/exec';
             
-            if (GOOGLE_SHEETS_URL.includes('YOUR_GOOGLE')) {
-                console.log('Google Sheets URL not configured. Data saved locally only.');
+            if (GOOGLE_SHEETS_URL.includes('PASTE_YOUR')) {
+                console.log('⚠️ Google Sheets URL not configured. Data saved locally only.');
                 return;
             }
+
+            console.log('📤 Sending to Google Sheets...', result);
 
             fetch(GOOGLE_SHEETS_URL, {
                 method: 'POST',
@@ -811,10 +810,10 @@
                 body: JSON.stringify(result)
             })
             .then(() => {
-                console.log('Data sent to Google Sheets');
+                console.log('✅ Data sent to Google Sheets successfully');
             })
             .catch((error) => {
-                console.error('Error sending to Google Sheets:', error);
+                console.error('❌ Error sending to Google Sheets:', error);
             });
         }
 
