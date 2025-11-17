@@ -535,56 +535,118 @@
 
     <script>
         const quizData = [
+            
             {
-                q: "What does BNS stand for?",
-                options: ["Bharat Nyaya Sanhita", "Bharat National Security", "Bharat New System", "Bharat Nyaya Suraksha"],
-                correct: 0
-            },
-            {
-                q: "Which year did the new criminal laws come into effect?",
-                options: ["2023", "2024", "2025", "2022"],
-                correct: 1
-            },
-            {
-                q: "What does BNSS stand for?",
-                options: ["Bharat Nyaya Security System", "Bharat Nyaya Suraksha Sanhita", "Bharat National Safety Standard", "Bharat New Security Sanhita"],
-                correct: 1
-            },
-            {
-                q: "The BNS replaces which colonial-era law?",
-                options: ["Criminal Procedure Code", "Indian Penal Code", "Indian Evidence Act", "Police Act"],
-                correct: 1
-            },
-            {
-                q: "What does BSA stand for?",
-                options: ["Bharat Security Act", "Bharat Sakshya Adhiniyam", "Bharat Safety Act", "Bharat Suraksha Abhiyan"],
-                correct: 1
-            },
-            {
-                q: "Under BNS, sedition has been replaced with which provision?",
-                options: ["Treason", "Acts endangering sovereignty", "National security threat", "Public disorder"],
-                correct: 1
-            },
-            {
-                q: "BNSS replaces which law?",
-                options: ["IPC", "CrPC", "Evidence Act", "Civil Procedure Code"],
-                correct: 1
-            },
-            {
-                q: "What is the main objective of the new criminal laws?",
-                options: ["Increase punishment", "Decolonize and modernize justice", "Reduce cases", "Increase police power"],
-                correct: 1
-            },
-            {
-                q: "Under BNSS, what is the timeline for filing charge sheets in most cases?",
-                options: ["30 days", "60 days", "90 days", "120 days"],
-                correct: 2
-            },
-            {
-                q: "Which act does BSA replace?",
-                options: ["IPC", "CrPC", "Indian Evidence Act", "Police Act"],
-                correct: 2
-            }
+        q: "What does BNS stand for?\n(BNS चे पूर्ण रूप काय आहे?)",
+        options: ["Bharatiya Nyaya Sanhita", "Bharatiya National Security", "Bharatiya New System", "Bharatiya Nyaya Suraksha"],
+        options_mr: ["भारतीय न्याय संहिता", "भारतीय नॅशनल सिक्युरिटी", "भारतीय न्यु सिस्टम", "भारतीय न्याय सुरक्षा"],
+        correct: 0
+    },
+    {
+        q: "Which year did the new criminal laws come into effect?\n(नवे फौजदारी कायदे कोणत्या वर्षी लागू झाले?)",
+        options: ["2023", "2024", "2025", "2022"],
+        options_mr: ["२०२३", "२०२४", "२०२५", "२०२२"],
+        correct: 1
+    },
+    {
+        q: "What does BNSS stand for?\n(BNSS चे पूर्ण रूप काय आहे?)",
+        options: [
+            "Bharatiya Nyaya Security System",
+            "Bharatiya Nyaya Suraksha Sanhita",
+            "Bharatiya National Safety Standard",
+            "Bharatiya New Security Sanhita"
+        ],
+        options_mr: [
+            "भारतीय न्याय सुरक्षा प्रणाली",
+            "भारतीय न्याय सुरक्षा संहिता",
+            "भारतीय नॅशनल सेफ्टी स्टँडर्ड",
+            "भारतीय न्यू सिक्युरिटी संहिता"
+        ],
+        correct: 1
+    },
+    {
+        q: "The BNS replaces which colonial-era law?\n(BNS कोणत्या वसाहतकालीन कायद्याची जागा घेतो?)",
+        options: [
+            "Criminal Procedure Code",
+            "Indian Penal Code",
+            "Indian Evidence Act",
+            "Police Act"
+        ],
+        options_mr: [
+            "फौजदारी प्रक्रिया संहिता",
+            "भारतीय दंड संहिता",
+            "भारतीय साक्ष्य अधिनियम",
+            "पोलिस अधिनियम"
+        ],
+        correct: 1
+    },
+    {
+        q: "What does BSA stand for?\n(BSA चे पूर्ण रूप काय आहे?)",
+        options: [
+            "Bharatiya Security Act",
+            "Bharatiya Sakshya Adhiniyam",
+            "Bharatiya Safety Act",
+            "Bharatiya Suraksha Abhiyan"
+        ],
+        options_mr: [
+            "भारतीय सुरक्षा अधिनियम",
+            "भारतीय साक्ष्य अधिनियम",
+            "भारतीय सेफ्टी अ‍ॅक्ट",
+            "भारतीय सुरक्षा अभियान"
+        ],
+        correct: 1
+    },
+    {
+        q: "Under BNS, sedition has been replaced with which provision?\n(BNS मध्ये देशद्रोहाच्या जागी कोणती तरतूद आणली आहे?)",
+        options: [
+            "Treason",
+            "Acts endangering sovereignty",
+            "National security threat",
+            "Public disorder"
+        ],
+        options_mr: [
+            "राज्यद्रोह",
+            "सार्वभौमत्वाला धोका निर्माण करणारी कृत्ये",
+            "राष्ट्रीय सुरक्षा धोका",
+            "सार्वजनिक अव्यवस्था"
+        ],
+        correct: 1
+    },
+    {
+        q: "BNSS replaces which law?\n(BNSS कोणत्या कायद्याची जागा घेतो?)",
+        options: ["IPC", "CrPC", "Evidence Act", "Civil Procedure Code"],
+        options_mr: ["भारतीय दंड संहिता", "फौजदारी प्रक्रिया संहिता", "साक्ष्य अधिनियम", "दिवाणी प्रक्रिया संहिता"],
+        correct: 1
+    },
+    {
+        q: "What is the main objective of the new criminal laws?\n(नवीन फौजदारी कायद्यांचा मुख्य उद्देश काय आहे?)",
+        options: [
+            "Increase punishment",
+            "Decolonize and modernize justice",
+            "Reduce cases",
+            "Increase police power"
+        ],
+        options_mr: [
+            "शिक्षा वाढवणे",
+            "न्याय प्रक्रियेचे डिकॉलोनायझेशन आणि आधुनिकीकरण",
+            "प्रकरणे कमी करणे",
+            "पोलिस शक्ती वाढवणे"
+        ],
+        correct: 1
+    },
+    {
+        q: "Under BNSS, what is the timeline for filing charge sheets in most cases?\n(BNSS नुसार बहुतांश प्रकरणांत चार्जशीट दाखल करण्याची मुदत किती आहे?)",
+        options: ["30 days", "60 days", "90 days", "120 days"],
+        options_mr: ["३० दिवस", "६० दिवस", "९० दिवस", "१२० दिवस"],
+        correct: 2
+    },
+    {
+        q: "Which act does BSA replace?\n(BSA कोणत्या कायद्याची जागा घेतो?)",
+        options: ["IPC", "CrPC", "Indian Evidence Act", "Police Act"],
+        options_mr: ["भारतीय दंड संहिता", "फौजदारी प्रक्रिया संहिता", "भारतीय साक्ष्य अधिनियम", "पोलिस अधिनियम"],
+        correct: 2
+    }
+
         ];
 
         let currentQuestion = 0;
