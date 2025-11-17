@@ -534,126 +534,292 @@
     </div>
 
     <script>
-        const quizData = [
-            
+        // ===============================
+        // COMPLETE QUESTION BANK
+        // Add as many questions as you want here
+        // ===============================
+        const FULL_QUESTION_BANK = [
             {
-        q: "What does BNS stand for?\n(BNS चे पूर्ण रूप काय आहे?)",
-        options: ["Bharatiya Nyaya Sanhita", "Bharatiya National Security", "Bharatiya New System", "Bharatiya Nyaya Suraksha"],
-        options_mr: ["भारतीय न्याय संहिता", "भारतीय नॅशनल सिक्युरिटी", "भारतीय न्यु सिस्टम", "भारतीय न्याय सुरक्षा"],
-        correct: 0
-    },
-    {
-        q: "Which year did the new criminal laws come into effect?\n(नवे फौजदारी कायदे कोणत्या वर्षी लागू झाले?)",
-        options: ["2023", "2024", "2025", "2022"],
-        options_mr: ["२०२३", "२०२४", "२०२५", "२०२२"],
-        correct: 1
-    },
-    {
-        q: "What does BNSS stand for?\n(BNSS चे पूर्ण रूप काय आहे?)",
-        options: [
-            "Bharatiya Nyaya Security System",
-            "Bharatiya Nyaya Suraksha Sanhita",
-            "Bharatiya National Safety Standard",
-            "Bharatiya New Security Sanhita"
-        ],
-        options_mr: [
-            "भारतीय न्याय सुरक्षा प्रणाली",
-            "भारतीय न्याय सुरक्षा संहिता",
-            "भारतीय नॅशनल सेफ्टी स्टँडर्ड",
-            "भारतीय न्यू सिक्युरिटी संहिता"
-        ],
-        correct: 1
-    },
-    {
-        q: "The BNS replaces which colonial-era law?\n(BNS कोणत्या वसाहतकालीन कायद्याची जागा घेतो?)",
-        options: [
-            "Criminal Procedure Code",
-            "Indian Penal Code",
-            "Indian Evidence Act",
-            "Police Act"
-        ],
-        options_mr: [
-            "फौजदारी प्रक्रिया संहिता",
-            "भारतीय दंड संहिता",
-            "भारतीय साक्ष्य अधिनियम",
-            "पोलिस अधिनियम"
-        ],
-        correct: 1
-    },
-    {
-        q: "What does BSA stand for?\n(BSA चे पूर्ण रूप काय आहे?)",
-        options: [
-            "Bharatiya Security Act",
-            "Bharatiya Sakshya Adhiniyam",
-            "Bharatiya Safety Act",
-            "Bharatiya Suraksha Abhiyan"
-        ],
-        options_mr: [
-            "भारतीय सुरक्षा अधिनियम",
-            "भारतीय साक्ष्य अधिनियम",
-            "भारतीय सेफ्टी अ‍ॅक्ट",
-            "भारतीय सुरक्षा अभियान"
-        ],
-        correct: 1
-    },
-    {
-        q: "Under BNS, sedition has been replaced with which provision?\n(BNS मध्ये देशद्रोहाच्या जागी कोणती तरतूद आणली आहे?)",
-        options: [
-            "Treason",
-            "Acts endangering sovereignty",
-            "National security threat",
-            "Public disorder"
-        ],
-        options_mr: [
-            "राज्यद्रोह",
-            "सार्वभौमत्वाला धोका निर्माण करणारी कृत्ये",
-            "राष्ट्रीय सुरक्षा धोका",
-            "सार्वजनिक अव्यवस्था"
-        ],
-        correct: 1
-    },
-    {
-        q: "BNSS replaces which law?\n(BNSS कोणत्या कायद्याची जागा घेतो?)",
-        options: ["IPC", "CrPC", "Evidence Act", "Civil Procedure Code"],
-        options_mr: ["भारतीय दंड संहिता", "फौजदारी प्रक्रिया संहिता", "साक्ष्य अधिनियम", "दिवाणी प्रक्रिया संहिता"],
-        correct: 1
-    },
-    {
-        q: "What is the main objective of the new criminal laws?\n(नवीन फौजदारी कायद्यांचा मुख्य उद्देश काय आहे?)",
-        options: [
-            "Increase punishment",
-            "Decolonize and modernize justice",
-            "Reduce cases",
-            "Increase police power"
-        ],
-        options_mr: [
-            "शिक्षा वाढवणे",
-            "न्याय प्रक्रियेचे डिकॉलोनायझेशन आणि आधुनिकीकरण",
-            "प्रकरणे कमी करणे",
-            "पोलिस शक्ती वाढवणे"
-        ],
-        correct: 1
-    },
-    {
-        q: "Under BNSS, what is the timeline for filing charge sheets in most cases?\n(BNSS नुसार बहुतांश प्रकरणांत चार्जशीट दाखल करण्याची मुदत किती आहे?)",
-        options: ["30 days", "60 days", "90 days", "120 days"],
-        options_mr: ["३० दिवस", "६० दिवस", "९० दिवस", "१२० दिवस"],
-        correct: 2
-    },
-    {
-        q: "Which act does BSA replace?\n(BSA कोणत्या कायद्याची जागा घेतो?)",
-        options: ["IPC", "CrPC", "Indian Evidence Act", "Police Act"],
-        options_mr: ["भारतीय दंड संहिता", "फौजदारी प्रक्रिया संहिता", "भारतीय साक्ष्य अधिनियम", "पोलिस अधिनियम"],
-        correct: 2
-    }
-
+                q: "What does BNS stand for?\n(BNS चे पूर्ण रूप काय आहे?)",
+                options: ["Bharatiya Nyaya Sanhita", "Bharatiya National Security", "Bharatiya New System", "Bharatiya Nyaya Suraksha"],
+                correct: 0
+            },
+            {
+                q: "Which year did the new criminal laws come into effect?\n(नवे फौजदारी कायदे कोणत्या वर्षी लागू झाले?)",
+                options: ["2023", "2024", "2025", "2022"],
+                correct: 1
+            },
+            {
+                q: "What does BNSS stand for?\n(BNSS चे पूर्ण रूप काय आहे?)",
+                options: [
+                    "Bharatiya Nyaya Security System",
+                    "Bharatiya Nyaya Suraksha Sanhita",
+                    "Bharatiya National Safety Standard",
+                    "Bharatiya New Security Sanhita"
+                ],
+                correct: 1
+            },
+            {
+                q: "The BNS replaces which colonial-era law?\n(BNS कोणत्या वसाहतकालीन कायद्याची जागा घेतो?)",
+                options: [
+                    "Criminal Procedure Code",
+                    "Indian Penal Code",
+                    "Indian Evidence Act",
+                    "Police Act"
+                ],
+                correct: 1
+            },
+            {
+                q: "What does BSA stand for?\n(BSA चे पूर्ण रूप काय आहे?)",
+                options: [
+                    "Bharatiya Security Act",
+                    "Bharatiya Sakshya Adhiniyam",
+                    "Bharatiya Safety Act",
+                    "Bharatiya Suraksha Abhiyan"
+                ],
+                correct: 1
+            },
+            {
+                q: "Under BNS, sedition has been replaced with which provision?\n(BNS मध्ये देशद्रोहाच्या जागी कोणती तरतूद आणली आहे?)",
+                options: [
+                    "Treason",
+                    "Acts endangering sovereignty",
+                    "National security threat",
+                    "Public disorder"
+                ],
+                correct: 1
+            },
+            {
+                q: "BNSS replaces which law?\n(BNSS कोणत्या कायद्याची जागा घेतो?)",
+                options: ["IPC", "CrPC", "Evidence Act", "Civil Procedure Code"],
+                correct: 1
+            },
+            {
+                q: "What is the main objective of the new criminal laws?\n(नवीन फौजदारी कायद्यांचा मुख्य उद्देश काय आहे?)",
+                options: [
+                    "Increase punishment",
+                    "Decolonize and modernize justice",
+                    "Reduce cases",
+                    "Increase police power"
+                ],
+                correct: 1
+            },
+            {
+                q: "Under BNSS, what is the timeline for filing charge sheets in most cases?\n(BNSS नुसार बहुतांश प्रकरणांत चार्जशीट दाखल करण्याची मुदत किती आहे?)",
+                options: ["30 days", "60 days", "90 days", "120 days"],
+                correct: 2
+            },
+            {
+                q: "Which act does BSA replace?\n(BSA कोणत्या कायद्याची जागा घेतो?)",
+                options: ["IPC", "CrPC", "Indian Evidence Act", "Police Act"],
+                correct: 2
+            },
+            // ADD MORE QUESTIONS BELOW - as many as you want!
+            {
+                q: "When was the Indian Penal Code (IPC) originally enacted?\n(भारतीय दंड संहिता (IPC) मूळ कधी लागू करण्यात आली?)",
+                options: ["1860", "1947", "1950", "1857"],
+                correct: 0
+            },
+            {
+                q: "The new criminal laws aim to remove which perspective?\n(नवीन फौजदारी कायदे कोणता दृष्टीकोन काढून टाकण्याचे उद्दिष्ट ठेवतात?)",
+                options: ["Modern", "Colonial", "Democratic", "Federal"],
+                correct: 1
+            },
+            {
+                q: "How many sections does the BNS contain approximately?\n(BNS मध्ये अंदाजे किती कलमे आहेत?)",
+                options: ["358", "511", "750", "450"],
+                correct: 0
+            },
+            {
+                q: "Under BNS, what is the provision for terrorism-related offenses?\n(BNS अंतर्गत दहशतवादाशी संबंधित गुन्ह्यांची तरतूद काय आहे?)",
+                options: [
+                    "Life imprisonment only",
+                    "Death penalty or life imprisonment",
+                    "Maximum 10 years",
+                    "Fine only"
+                ],
+                correct: 1
+            },
+            {
+                q: "What major technological advancement is incorporated in BNSS?\n(BNSS मध्ये कोणती प्रमुख तांत्रिक प्रगती समाविष्ट करण्यात आली आहे?)",
+                options: [
+                    "Video conferencing for trials",
+                    "Paper-based filing only",
+                    "Manual record keeping",
+                    "Traditional court proceedings"
+                ],
+                correct: 0
+            },
+            {
+                q: "The BSA modernizes rules related to what?\n(BSA कशासंबंधीचे नियम आधुनिक करतो?)",
+                options: ["Criminal procedure", "Evidence and proof", "Punishment", "Investigation"],
+                correct: 1
+            },
+            {
+                q: "Under BNS, what is the focus regarding women's safety?\n(BNS अंतर्गत महिलांच्या सुरक्षेसंदर्भात काय लक्ष केंद्रित आहे?)",
+                options: [
+                    "No special provisions",
+                    "Stronger penalties for crimes against women",
+                    "Same as before",
+                    "Reduced penalties"
+                ],
+                correct: 1
+            },
+            {
+                q: "What does the new law emphasize for criminal investigations?\n(नवीन कायदा फौजदारी तपासासाठी काय जोर देतो?)",
+                options: [
+                    "Manual processes",
+                    "Forensic science and technology",
+                    "Witness testimony only",
+                    "Traditional methods only"
+                ],
+                correct: 1
+            },
+            {
+                q: "Under BNSS, what is the provision for e-FIR?\n(BNSS अंतर्गत ई-FIR ची तरतूद काय आहे?)",
+                options: [
+                    "Not allowed",
+                    "Allowed and encouraged",
+                    "Only for minor offenses",
+                    "Only in urban areas"
+                ],
+                correct: 1
+            },
+            {
+                q: "What is the punishment for mob lynching under BNS?\n(BNS अंतर्गत जमाव हत्येची शिक्षा काय आहे?)",
+                options: [
+                    "Fine only",
+                    "7 years imprisonment or life imprisonment or death",
+                    "No specific provision",
+                    "Community service"
+                ],
+                correct: 1
+            },
+            {
+                q: "The new laws were passed by Parliament in which year?\n(नवीन कायदे संसदेने कोणत्या वर्षी मंजूर केले?)",
+                options: ["2021", "2022", "2023", "2024"],
+                correct: 2
+            },
+            {
+                q: "What is the key change regarding digital evidence in BSA?\n(BSA मध्ये डिजिटल पुराव्यासंबंधी मुख्य बदल काय आहे?)",
+                options: [
+                    "Not recognized",
+                    "Fully recognized and admissible",
+                    "Partially accepted",
+                    "Only with court permission"
+                ],
+                correct: 1
+            },
+            {
+                q: "Under BNS, organized crime is punishable with?\n(BNS अंतर्गत संघटित गुन्हेगारीसाठी शिक्षा काय आहे?)",
+                options: [
+                    "Only fine",
+                    "Minimum 5 years to life imprisonment",
+                    "Maximum 2 years",
+                    "Warning"
+                ],
+                correct: 1
+            },
+            {
+                q: "What provision does BNSS make for witness protection?\n(BNSS साक्षीदारांच्या संरक्षणासाठी कोणती तरतूद करतो?)",
+                options: [
+                    "No provision",
+                    "Comprehensive witness protection",
+                    "Minimal protection",
+                    "Only for police witnesses"
+                ],
+                correct: 1
+            },
+            {
+                q: "The new criminal laws came into effect on which date?\n(नवीन फौजदारी कायदे कोणत्या तारखेला लागू झाले?)",
+                options: [
+                    "January 26, 2024",
+                    "July 1, 2024",
+                    "August 15, 2024",
+                    "December 25, 2023"
+                ],
+                correct: 1
+            },
+            {
+                q: "Under BNS, what is the approach to juvenile offenders?\n(BNS अंतर्गत किशोर गुन्हेगारांसाठी दृष्टीकोन काय आहे?)",
+                options: [
+                    "Same as adults",
+                    "Rehabilitation focused",
+                    "Stricter punishment",
+                    "No trial"
+                ],
+                correct: 1
+            },
+            {
+                q: "What technological tool is promoted under BNSS for case management?\n(BNSS अंतर्गत केस मॅनेजमेंटसाठी कोणते तांत्रिक साधन प्रोत्साहन दिले जाते?)",
+                options: [
+                    "Paper files",
+                    "Digital case management systems",
+                    "Manual registers",
+                    "Verbal communication"
+                ],
+                correct: 1
+            },
+            {
+                q: "Under BNS, cyber crimes are addressed with?\n(BNS अंतर्गत सायबर गुन्ह्यांना कसे हाताळले जाते?)",
+                options: [
+                    "No specific provisions",
+                    "Specific sections and penalties",
+                    "Minimal coverage",
+                    "Only civil penalties"
+                ],
+                correct: 1
+            },
+            {
+                q: "What is the provision for community service as punishment in BNS?\n(BNS मध्ये शिक्षा म्हणून सामुदायिक सेवेची तरतूद काय आहे?)",
+                options: [
+                    "Not included",
+                    "Included for certain offenses",
+                    "Mandatory for all crimes",
+                    "Only for minors"
+                ],
+                correct: 1
+            },
+            {
+                q: "Under BNSS, what is the time limit for investigation in most cases?\n(BNSS अंतर्गत बहुतांश प्रकरणांमध्ये तपासाची कालमर्यादा किती आहे?)",
+                options: [
+                    "No limit",
+                    "180 days with possible extension",
+                    "30 days only",
+                    "1 year"
+                ],
+                correct: 1
+            }
         ];
 
+        // Quiz state variables
+        let selectedQuestions = [];
         let currentQuestion = 0;
         let userAnswers = new Array(10).fill(null);
         let timerInterval;
         let timeRemaining = 180;
         let userData = {};
+
+        // ===============================
+        // SHUFFLE FUNCTION
+        // ===============================
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        // ===============================
+        // SELECT 10 RANDOM QUESTIONS
+        // ===============================
+        function selectRandomQuestions() {
+            const shuffled = shuffleArray(FULL_QUESTION_BANK);
+            selectedQuestions = shuffled.slice(0, 10);
+            console.log(`Selected ${selectedQuestions.length} random questions from ${FULL_QUESTION_BANK.length} total questions`);
+        }
 
         function startQuiz() {
             const name = document.getElementById('userName').value.trim();
@@ -670,6 +836,9 @@
             }
 
             userData = { name, occupation };
+
+            // Select random 10 questions
+            selectRandomQuestions();
 
             document.getElementById('userInfoScreen').classList.add('hidden');
             document.getElementById('quizScreen').classList.remove('hidden');
@@ -704,7 +873,7 @@
         }
 
         function renderQuestion() {
-            const question = quizData[currentQuestion];
+            const question = selectedQuestions[currentQuestion];
             document.getElementById('questionText').textContent = `${currentQuestion + 1}. ${question.q}`;
             document.getElementById('questionCounter').textContent = `${currentQuestion + 1}/10`;
 
@@ -819,7 +988,7 @@
         function calculateResults() {
             let score = 0;
 
-            quizData.forEach((q, index) => {
+            selectedQuestions.forEach((q, index) => {
                 if (userAnswers[index] === q.correct) {
                     score++;
                 }
