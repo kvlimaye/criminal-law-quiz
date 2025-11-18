@@ -39,6 +39,7 @@
             padding: 20px;
             text-align: center;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
         }
 
         .app-header h1 {
@@ -59,6 +60,7 @@
             justify-content: center;
             align-items: center;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            flex-shrink: 0;
         }
 
         .timer {
@@ -93,6 +95,7 @@
             padding: 20px;
             display: flex;
             flex-direction: column;
+            min-height: 0; /* CRITICAL FIX: allows flex child to shrink properly */
         }
 
         .form-group {
@@ -131,6 +134,7 @@
             padding: 20px;
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
             margin-bottom: auto;
+            /* REMOVED: This was causing issues with long content */
         }
 
         .question-text {
@@ -139,6 +143,7 @@
             color: #333;
             line-height: 1.5;
             margin-bottom: 20px;
+            white-space: pre-wrap; /* Preserve line breaks in questions */
         }
 
         .option {
@@ -209,7 +214,10 @@
             box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
             display: flex;
             gap: 12px;
-            flex-shrink: 0;
+            flex-shrink: 0; /* CRITICAL: Prevents buttons from being pushed off screen */
+            position: sticky;
+            bottom: 0;
+            z-index: 10;
         }
 
         .btn {
@@ -436,6 +444,7 @@
                 border-radius: 20px;
                 height: auto;
                 min-height: 80vh;
+                max-height: 90vh; /* ADDED: Prevents container from growing too tall */
                 margin: 20px;
             }
         }
@@ -793,7 +802,7 @@
 },
 {
     q: "Who writes the FIR?\n(FIR कोण लिहितो?)",
-    options: ["The complainant’s family / तक्रारदाराचे कुटुंब", "The duty police officer / ड्युटीवरील पोलीस अधिकारी", "A lawyer / वकील", "A judge / न्यायाधीश"],
+    options: ["The complainant's family / तक्रारदाराचे कुटुंब", "The duty police officer / ड्युटीवरील पोलीस अधिकारी", "A lawyer / वकील", "A judge / न्यायाधीश"],
     correct: 1
 },
 {
@@ -873,7 +882,7 @@
 },
 {
     q: "Which is the safest rule for avoiding fraud?\n(फसवणूक टाळण्यासाठी सर्वात सुरक्षित नियम कोणता?)",
-    options: ["Share OTP with friends / मित्रांसोबत OTP शेअर करा", "Don’t click unknown links / अनोळखी लिंकवर क्लिक करू नका", " Post personal details online / वैयक्तिक माहिती ऑनलाइन पोस्ट करा", "Save passwords on phone / फोनवर पासवर्ड सेव्ह करा"],
+    options: ["Share OTP with friends / मित्रांसोबत OTP शेअर करा", "Don't click unknown links / अनोळखी लिंकवर क्लिक करू नका", " Post personal details online / वैयक्तिक माहिती ऑनलाइन पोस्ट करा", "Save passwords on phone / फोनवर पासवर्ड सेव्ह करा"],
     correct: 1
 },
 {
@@ -907,7 +916,7 @@
     correct: 2
 },
 {
-    q: "Who does protect victim’s rights in Court?\n(न्यायालयात पीडितांचे हक्क कोण जपतो?)",
+    q: "Who does protect victim's rights in Court?\n(न्यायालयात पीडितांचे हक्क कोण जपतो?)",
     options: ["Public Prosecutor / सरकारी अभियोक्ता", "Neighbour / शेजारी", "Shopkeeper / दुकानदार", "Journalist / पत्रकार"],
     correct: 0
 },
@@ -1089,7 +1098,7 @@
     correct: 2
 },
 {
-    q: "Victim’s basic right—\n(पीडिताचा मूलभूत हक्क—?)",
+    q: "Victim's basic right—\n(पीडिताचा मूलभूत हक्क—?)",
     options: ["To scold accused / आरोपीला ओरडणे", "To get case info / कार्यवाहीची माहिती मिळणे", "To order arrest / अटक आदेश देणे", "To close case / केस बंद करणे"],
     correct: 1
 },
@@ -1485,7 +1494,7 @@
             if (score === 10) {
                 resultIcon.textContent = '🎉';
                 resultTitle.textContent = 'Congratulations!';
-                resultMessage.textContent = `Excellent performance, ${userData.name}! You scored a perfect 10 out of 10. Please collect your gift from the Prosecution stall.`;
+                resultMessage.textContent = `Excellent performance, ${userData.name}! You scored a perfect 10 out of 10. Congratulationsl.`;
                 prizeBadge.innerHTML = '<div class="prize-badge">🎁 Collect Your Gift!</div>';
             } else {
                 resultIcon.textContent = '👍';
